@@ -257,6 +257,14 @@ def upload_file():
 def image(filename):
     return send_from_directory("D:/fyp/DERMATE/dermate/flaskApi/folder/", filename)
 
+@app.route("/helloworld", methods=["GET"])
+def hello_world():
+    return "Hello World"
+
+@app.route("/", methods=["GET"])
+def root():
+    return "This is the home route"
+
 
 @app.route("/predict", methods=["POST"])
 def predict():
