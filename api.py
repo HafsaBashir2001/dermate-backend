@@ -140,6 +140,10 @@ def predict_skin_type(face_img):
 #         return jsonify({'message': 'Internal server error'}), 500
 
 
+@app.route('/')
+@app.route('/')
+def hello_world():
+    return 'Hello from Flask!'
 
 @app.route('/api/products/<skin_type>')
 def get_filtered_products(skin_type):
