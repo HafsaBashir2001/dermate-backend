@@ -200,12 +200,12 @@ def submit_feedback():
         email = data['email']
         gender = data['gender']
         review = data['review']
-        sentiment = data['sentiment']
+        
 
         # Write the feedback to a CSV file (rating.csv)
         with open('rating.csv', 'a', newline='') as file:
             csv_writer = csv.writer(file)
-            csv_writer.writerow([name, email, gender, review,sentiment])
+            csv_writer.writerow([name, email, gender, review])
 
         return jsonify({'message': 'Feedback submitted successfully'}), 201
 
@@ -224,13 +224,13 @@ def get_feedback_data():
         with open('rating.csv', 'r') as file:
             csv_reader = csv.reader(file)
             for row in csv_reader:
-                name, email, gender, review, sentiment = row
+                name, email, gender, review,  = row
                 feedback_data.append({
                     'name': name,
                     'email': email,
                     'gender': gender,
                     'review': review,
-                    'sentiment' : sentiment
+                    
                     
                 })
         return jsonify({'feedback': feedback_data}), 200
@@ -256,14 +256,6 @@ def upload_file():
 @app.route("/images/<filename>")
 def image(filename):
     return send_from_directory("D:/fyp/DERMATE/dermate/flaskApi/folder/", filename)
-
-@app.route("/helloworld", methods=["GET"])
-def hello_world():
-    return "Hello World"
-
-@app.route("/", methods=["GET"])
-def root():
-    return "This is the home route"
 
 
 @app.route("/predict", methods=["POST"])
