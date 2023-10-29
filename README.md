@@ -21,6 +21,7 @@ The acne severity prediction model employs machine learning to assess acne level
 
 The skincare product data is typically stored in a CSV file. It contains information such as product name, ingredients, and suitable skin types. This data is used to recommend products to users based on their skin type and concerns.
 
+![3](https://github.com/HafsaBashir2001/dermate-backend/assets/143214771/e18777ad-45d3-480c-921b-4c8ac61febba)
 
 ## Getting Started
 
